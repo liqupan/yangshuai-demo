@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "1f6fdbe3-27cd-489d-9216-ddf8f8806e4f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3211492"
+	},
+	"item": [
+		{
+			"name": "登陆",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"changxianshi\",\r\n    \"password\": \"changxianshi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/auth/login",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "验证登陆是否成功",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Hioshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY1NzE3MzY0MX0.UFfuh1HrzFoWRQK0QBWzwTXabPQG91rnDZ8ezRZA2MI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/index/checkLogin",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"index",
+						"checkLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取首页数据 ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/index",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"index"
+					]
+				},
+				"description": "返回值解析：\n\n1.  goodsOnsale: 48 上架的商品\n2.  orderToDelivery: 9 代发货订单\n3.  user: 54 用户数"
+			},
+			"response": []
+		},
+		{
+			"name": "获取订单列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/order?page=1&logistic_code=&status=101,102,103,202,203,300,301,302,303,401,801,802",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"order"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "logistic_code",
+							"value": ""
+						},
+						{
+							"key": "status",
+							"value": "101,102,103,202,203,300,301,302,303,401,801,802"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取用户列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/user?page=1",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"user"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取商品列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://liqupan.cn/api/admin/goods?page=1&size=10&name=",
+					"protocol": "https",
+					"host": [
+						"liqupan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"admin",
+						"goods"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
